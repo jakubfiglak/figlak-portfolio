@@ -1,9 +1,13 @@
 import * as React from 'react';
+import { GlobalStyles } from '../styles/GlobalStyles';
 
 const IndexPage = () => (
-  <main>
-    <h1>hello</h1>
-  </main>
+  <>
+    <GlobalStyles />
+    <main>
+      <h1>hello</h1>
+    </main>
+  </>
 );
 
 export default IndexPage;
