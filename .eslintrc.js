@@ -24,10 +24,11 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
+    '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'prettier/prettier': ['error'],
+    'react/prop-types': 'off',
   },
   settings: {
     'import/resolver': {
