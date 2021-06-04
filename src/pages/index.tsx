@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { Trans } from 'gatsby-plugin-react-i18next';
