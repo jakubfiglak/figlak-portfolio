@@ -1,14 +1,20 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import { Trans } from 'gatsby-plugin-react-i18next';
 import { ThemeToggler } from '../components/ThemeToggler';
 import { GlobalStyles } from '../styles/GlobalStyles';
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
 
 const IndexPage = () => (
   <>
     <GlobalStyles />
     <StyledContainer>
       <ThemeToggler />
-      <h1>hello</h1>
+      <LanguageSwitcher />
+      <h1>
+        <Trans>Hello</Trans>
+      </h1>
     </StyledContainer>
   </>
 );
@@ -24,3 +30,17 @@ const StyledContainer = styled.main`
 `;
 
 export default IndexPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
