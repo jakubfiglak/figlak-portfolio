@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { WiDaySunny, WiNightClear } from 'react-icons/wi';
 
 type Theme = 'light' | 'dark';
 
@@ -12,8 +14,22 @@ export const ThemeToggler = () => {
   }, [theme]);
 
   return (
-    <button type="button" onClick={() => setTheme(nextTheme)}>
-      Change to {nextTheme} theme
-    </button>
+    <StyledThemeToggler type="button" onClick={() => setTheme(nextTheme)} title={`Change to ${nextTheme} theme`}>
+      {nextTheme === 'light' ? <WiDaySunny /> : <WiNightClear />}
+    </StyledThemeToggler>
   );
 };
+
+const StyledThemeToggler = styled.button`
+  display: flex;
+  justify-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+`;

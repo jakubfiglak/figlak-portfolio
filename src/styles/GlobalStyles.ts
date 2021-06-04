@@ -20,6 +20,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
+    background: var(--colors-background);
+    color: var(--colors-text);
   }
 
   body[data-theme='dark'] {
@@ -46,5 +48,10 @@ export const GlobalStyles = createGlobalStyle`
   button {
     font-family: var(--font-stack);
     cursor: pointer;
+    color: inherit;
+  }
+
+  li {
+    list-style: none;
   }
 `;

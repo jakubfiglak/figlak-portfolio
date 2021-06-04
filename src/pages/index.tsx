@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { Trans } from 'gatsby-plugin-react-i18next';
-import { ThemeToggler } from '../components/ThemeToggler';
 import { GlobalStyles } from '../styles/GlobalStyles';
-import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { Nav } from '../components/Nav';
 
 const IndexPage = () => (
   <>
     <GlobalStyles />
+    <Nav />
     <StyledContainer>
-      <ThemeToggler />
-      <LanguageSwitcher />
       <h1>
         <Trans>Hello</Trans>
       </h1>
@@ -25,8 +23,6 @@ const StyledContainer = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: var(--colors-background);
-  color: var(--colors-text);
 `;
 
 export default IndexPage;
